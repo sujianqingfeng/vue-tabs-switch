@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+ 
+    <tabs>
+      <tab-item label='ONE'> fff</tab-item>
+    </tabs>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Tabs from './components/Tabs.vue'
+import TabItem from './components/TabItem.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Tabs,
+    TabItem
   }
 }
 </script>
