@@ -10,7 +10,11 @@
 export default {
   name: "TabItem",
   props:{
-      label:String
-  }
+      label:String,
+      icon:String,  
+  },
+  mounted() {
+      this.$parent.addItems(this.$props)
+  },
 };
 </script>
