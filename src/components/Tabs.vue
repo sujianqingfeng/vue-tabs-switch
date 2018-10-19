@@ -3,7 +3,10 @@
 
         <div class="header">
             <ul>
-                <li :class="{check:check==index}" v-for="(item,index) in items" :key="index" @click="handleClick(index)">{{item.label}}</li>
+                <li :class="{check:check==item.hash}" v-for="(item,index) in items" :key="index" @click="handleClick(item.hash)">
+                    {{item.label.toUpperCase()}}
+            
+                </li>
             </ul>
         </div>
 
@@ -11,10 +14,6 @@
            
         <slot></slot>
         </div>
-        <!-- {{this.items}}
-         {{this.$slots.default}} -->
-
-         <button @click="aaa">aaa</button>
     </div>
 </template>
 
@@ -27,8 +26,13 @@ export default {
       items:[],
       check:0
   }),
+  created(){
+      this.items = this.$children
+     
+  },
   mounted(){
-
+        this.check = this.items[0].hash
+        this.items[0].isVisible = true
   },
   methods:{
       aaa(){
@@ -39,15 +43,21 @@ export default {
             // this.$children.push(this.items[0])
         
       },
-      handleClick(index){
-          console.log(index)
-          this.check = index
+
+      findTab(hash){
+         return this.items.find(value=>value.hash === hash)
       },
-      addItems(item){
-           const index = this.$slots.default.indexOf(item.$vnode);
-           console.log(index)
-        //   this.items.splice(index, 0, item);
-        this.items.push(item)
+      handleClick(hash){
+          let item =  this.findTab(hash)
+          item.isVisible = true
+          this.check = hash
+        
+
+            this.items.forEach(tab=>{
+                tab.isVisible = (tab.hash == hash)
+            })
+
+
       }
   }
 };
@@ -57,17 +67,23 @@ export default {
 .tabs
     
     .header
-        border-bottom 1px solid #969696
+        
 
         height 30px
         ul
             display flex
             height 100%
+            // border-bottom 1px solid #969696
             li 
-                display block
+                display flex
+                align-items center
                 height 100%
-                flex 1
+                // flex 1
                 color #646464
+                padding-left 10px
+                padding-right 10px
+
+                
                 
                 font-weight bold
                 &:hover 
@@ -80,7 +96,8 @@ export default {
             
     .content
         margin 20px
-        background-color gray 
+        
+        // background-color gray 
 </style>
 
 

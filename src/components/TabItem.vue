@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-item">
+    <div class="tab-item" v-show="isVisible">
         <slot></slot>
     </div>
 </template>
@@ -10,11 +10,22 @@
 export default {
   name: "TabItem",
   props:{
-      label:String,
+      label:{
+          type:String,
+          required:true
+      },
       icon:String,  
   },
+  data:()=>({
+      isVisible:false
+  }),
+  computed:{
+      hash(){
+          return this.label.toLowerCase()
+      }
+  },
   mounted() {
-      this.$parent.addItems(this.$props)
+     
   },
 };
 </script>
