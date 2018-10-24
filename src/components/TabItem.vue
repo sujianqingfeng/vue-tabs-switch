@@ -29,3 +29,13 @@ export default {
   },
 };
 </script>
+
+
+<style lang="stylus" scoped>
+.tab-item
+    display flex
+
+
+
+</style>
+

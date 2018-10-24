@@ -2,10 +2,10 @@
   <div id="app">
  
     <tabs>
-      <tab-item label='ONE'> ONE</tab-item>
-      <tab-item label='Two'> Two</tab-item>
+      <tab-item label='ONE'> 我是内容ONE</tab-item>
+      <tab-item label='Two'> 我是内容Two</tab-item>
 
-      <tab-item label='three'> three</tab-item>
+      <tab-item label='three'> 我是内容three</tab-item>
     </tabs>
   </div>
 </template>
