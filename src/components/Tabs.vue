@@ -77,15 +77,30 @@ export default {
                 padding-left 10px
                 padding-right 10px     
                 font-weight bold
-                &:hover 
+                position: relative
+
+                &:hover:after
+                        opacity 1
+                        transform:  scaleX(1)
+                        transition: .2s ease-in-out
+                        
+                &:after
+                    content ''
+                    position absolute
+                    left 0
+                    bottom -2px
+                    width 100%
                     color #2f2f2f
+                    opacity 0
                     border-bottom 2px solid #646464
+                    transform:  scaleX(0)
+                   
                 &.check
                     border-bottom 2px solid #646464
                     color #2f2f2f                   
     .content
         margin-top 16px
-        margin-left 10px
+        
         
 </style>
 
