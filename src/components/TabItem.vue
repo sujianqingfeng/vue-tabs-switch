@@ -1,9 +1,8 @@
 <template>
-    <div class="tab-item" v-show="isVisible">
+    <div class="tab-item" v-show="isVisible">         
         <slot></slot>
     </div>
 </template>
-
 
 
 <script>
@@ -14,7 +13,8 @@ export default {
           type:String,
           required:true
       },
-      icon:String,  
+      prefixIcon:[Object, Array, String],
+      suffixIcon:[Object, Array, String] 
   },
   data:()=>({
       isVisible:false
@@ -25,7 +25,11 @@ export default {
       }
   },
   mounted() {
-     
+     if(this.$slots.suffix)
+     this.$parent.addSlots(`suffix-${this.hash}`,this.$slots.suffix)
+
+     if(this.$slots.prefix)
+     this.$parent.addSlots(`prefix-${this.hash}`,this.$slots.prefix)
   },
 };
 </script>
