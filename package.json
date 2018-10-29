@@ -1,12 +1,27 @@
 {
-  "name": "tab-switch",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@sujian/tabs-switch",
+  "version": "0.3.0",
+  "private": false,
+  "main": "dist/tabs-switch.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-bundle": "vue-cli-service build --target lib --name tabs-switch ./src/components/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sujianqingfeng/vue-tabs-switch.git"
+  },
+  "keywords": [
+    "tabs"
+  ],
+  "author": "sujian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sujianqingfeng/vue-tabs-switch/issues"
+  },
+  "homepage": "https://github.com/sujianqingfeng/vue-tabs-switch",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-brands-svg-icons": "^5.4.1",

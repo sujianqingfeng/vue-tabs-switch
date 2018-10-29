@@ -26,15 +26,9 @@
 </template>
 
 <script>
-import Tabs from "./components/Tabs.vue";
-import TabItem from "./components/TabItem.vue";
 
 export default {
   name: "app",
-  components: {
-    Tabs,
-    TabItem
-  }
 };
 </script>
 

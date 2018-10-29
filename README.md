@@ -8,6 +8,15 @@
 ## Usage
 
 ```
+yarn add @sujian/tabs-switch
+```
+
+```
+import tabsSwitch from '@sujian/tabs-switch'
+Vue.use(tabsSwitch)
+```
+
+```
   <tabs>
       <tab-item label='ONE' :prefix-icon="['fas','coffee']"> 我是内容ONE</tab-item>
       <tab-item label='Two' prefix-icon="angry"> 我是内容Two</tab-item>
